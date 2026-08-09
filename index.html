@@ -218,33 +218,55 @@ padding: 0;
             font-size: 14px;
         }
 
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
+    .categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
 
-        .category {
-            background: white;
-            border-radius: 18px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,.06);
-        }
+.category {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
 
-        .category h3 {
-            color: #001e50;
-            margin-bottom: 14px;
-        }
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+}
 
-        .category ul {
-            list-style: none;
-            color: #4b5563;
-        }
+.category-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,.10);
+}
 
-        .category li {
-            padding: 6px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
+.category-icon {
+    font-size: 34px;
+    margin-bottom: 16px;
+}
+
+.category h3 {
+    color: #001e50;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.category p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.category span {
+    color: #0057b8;
+    font-weight: 700;
+    font-size: 14px;
+}
 
         .promotion {
             background: #001e50;
@@ -444,46 +466,177 @@ padding: 0;
                 <p>Encuentra el Volkswagen que va contigo.</p>
             </div>
 
-            <div class="categories">
+           <div class="categories">
 
-                <div class="category">
-                    <h3>🚗 Coches</h3>
-                    <ul>
-                        <li>Polo</li>
-                        <li>Virtus</li>
-                        <li>Jetta</li>
-                        <li>GTI</li>
-                    </ul>
-                </div>
+    <a class="category category-link" href="#coches">
+        <div class="category-icon">🚗</div>
+        <h3>Coches</h3>
+        <p>Polo · Virtus · Jetta · GTI</p>
+        <span>Ver modelos →</span>
+    </a>
 
-                <div class="category">
-                    <h3>🚙 SUVs</h3>
-                    <ul>
-                        <li>Tera</li>
-                        <li>Nivus</li>
-                        <li>Taigun</li>
-                        <li>Taos</li>
-                        <li>Tiguan</li>
-                        <li>Teramont</li>
-                        <li>Cross Sport</li>
-                        <li>Saveiro</li>
-                    </ul>
-                </div>
+    <a class="category category-link" href="#suvs">
+        <div class="category-icon">🚙</div>
+        <h3>SUVs</h3>
+        <p>Tera · Nivus · Taigun · Taos · Tiguan · Teramont · Cross Sport · Saveiro</p>
+        <span>Ver modelos →</span>
+    </a>
 
-                <div class="category">
-                    <h3>🚚 Vehículos comerciales</h3>
-                    <ul>
-                        <li>Amarok</li>
-                        <li>Caddy Pasajeros</li>
-                        <li>Transporter</li>
-                        <li>Crafter</li>
-                    </ul>
-                </div>
+    <a class="category category-link" href="#comerciales">
+        <div class="category-icon">🚐</div>
+        <h3>Vehículos comerciales</h3>
+        <p>Amarok · Caddy · Transporter · Crafter</p>
+        <span>Ver modelos →</span>
+    </a>
 
+</div>
             </div>
 
         </div>
     </section>
+
+    
+
+    <section id="coches">
+      
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🚗 Coches</h2>
+            <p>Encuentra el Volkswagen ideal para tu camino.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🚘</div>
+                <h3>Polo</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚘</div>
+                <h3>Virtus</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚘</div>
+                <h3>Jetta</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏁</div>
+                <h3>GTI</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+   
+
+   <section id="suvs">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🚙 SUVs</h2>
+            <p>Espacio, tecnología y versatilidad para cada camino.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Tera</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Nivus</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Taigun</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Taos</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Tiguan</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Teramont</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚙</div>
+                <h3>Cross Sport</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛻</div>
+                <h3>Saveiro</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="comerciales">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>🚐 Vehículos comerciales</h2>
+            <p>Soluciones Volkswagen para tu negocio, trabajo y proyectos.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🛻</div>
+                <h3>Amarok</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚐</div>
+                <h3>Caddy Pasajeros</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚐</div>
+                <h3>Transporter</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🚚</div>
+                <h3>Crafter</h3>
+                <p>Conoce versiones, equipamiento, promociones e inventario.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
     <section>
         <div class="container">
