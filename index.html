@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Braulio Zapata | Volkswagen Datsa</title>
+
+    <meta name="description" content="Braulio Zapata, Asesor Profesional de Ventas Volkswagen Datsa. Conoce nuestra gama, promociones y opciones de financiamiento.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f5f6f8;
+            color: #111827;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: min(100% - 32px, 1100px);
+            margin: auto;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 18px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .vw-logo {
+            width: 48px;
+            height: 48px;
+            border: 2px solid #001e50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #001e50;
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .brand-text strong {
+            display: block;
+            color: #001e50;
+            font-size: 18px;
+        }
+
+        .brand-text span {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #001e50, #003b7a);
+            color: white;
+            padding: 58px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            opacity: .8;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1;
+            margin-bottom: 18px;
+        }
+
+        .hero h2 {
+            font-size: 21px;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #e5edf7;
+            font-size: 17px;
+        }
+
+        .profile-placeholder {
+            width: 260px;
+            height: 260px;
+            margin: auto;
+            border-radius: 50%;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dbeafe;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .actions {
+            padding: 24px 0;
+            background: white;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .action {
+            text-decoration: none;
+            text-align: center;
+            padding: 17px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: transform .2s;
+        }
+
+        .action:hover {
+            transform: translateY(-2px);
+        }
+
+        .whatsapp {
+            background: #168b55;
+            color: white;
+        }
+
+        .appointment {
+            background: #001e50;
+            color: white;
+        }
+
+        section {
+            padding: 58px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            color: #001e50;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.06);
+        }
+
+        .card-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #001e50;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .category {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.06);
+        }
+
+        .category h3 {
+            color: #001e50;
+            margin-bottom: 14px;
+        }
+
+        .category ul {
+            list-style: none;
+            color: #4b5563;
+        }
+
+        .category li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .promotion {
+            background: #001e50;
+            color: white;
+            border-radius: 22px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .promotion h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .promotion p {
+            color: #dbeafe;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #001e50;
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .contact a {
+            color: #001e50;
+            font-weight: 700;
+        }
+
+        footer {
+            background: #00142f;
+            color: #b8c5d6;
+            text-align: center;
+            padding: 28px 16px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-placeholder {
+                width: 210px;
+                height: 210px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .action-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 42px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container brand">
+        <div class="brand">
+            <div class="vw-logo">VW</div>
+
+            <div class="brand-text">
+                <strong>Volkswagen Datsa</strong>
+                <span>VW SmartCard</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div>
+                <div class="eyebrow">Volkswagen Datsa · Tuxtla Gutiérrez</div>
+
+                <h1>Braulio Zapata</h1>
+
+                <h2>Asesor Profesional de Ventas Volkswagen Datsa</h2>
+
+                <p>
+                    Cada cliente tiene un camino diferente.
+                    Permíteme ayudarte a encontrar el Volkswagen ideal para ti.
+                </p>
+            </div>
+
+            <div class="profile-placeholder">
+                Aquí colocaremos la fotografía de Braulio
+            </div>
+
+        </div>
+    </section>
+
+    <section class="actions">
+        <div class="container action-grid">
+
+            <a class="action whatsapp"
+               href="https://wa.me/529611834007"
+               target="_blank">
+                💬 WhatsApp
+            </a>
+
+            <a class="action appointment"
+               href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20gustaría%20agendar%20una%20asesoría%20personalizada."
+               target="_blank">
+                📅 Agenda una asesoría personalizada
+            </a>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="section-title">
+                <h2>¿Qué estás buscando?</h2>
+                <p>Estoy aquí para ayudarte a encontrar la mejor opción para ti.</p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">🚗</div>
+                    <h3>Conocer un vehículo</h3>
+                    <p>Descubre modelos, versiones, características y disponibilidad.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💳</div>
+                    <h3>Revisar opciones de financiamiento</h3>
+                    <p>Conozcamos tu perfil y encontremos el plan que mejor se adapte a ti.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Cotizar mi auto a cuenta</h3>
+                    <p>Podemos revisar tu vehículo actual como parte de tu nuevo Volkswagen.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📅</div>
+                    <h3>Agendar una asesoría</h3>
+                    <p>Platiquemos personalmente y encontremos juntos la mejor opción.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Conoce nuestra gama</h2>
+                <p>Encuentra el Volkswagen que va contigo.</p>
+            </div>
+
+            <div class="categories">
+
+                <div class="category">
+                    <h3>🚗 Coches</h3>
+                    <ul>
+                        <li>Polo</li>
+                        <li>Virtus</li>
+                        <li>Jetta</li>
+                        <li>GTI</li>
+                    </ul>
+                </div>
+
+                <div class="category">
+                    <h3>🚙 SUVs</h3>
+                    <ul>
+                        <li>Tera</li>
+                        <li>Nivus</li>
+                        <li>Taigun</li>
+                        <li>Taos</li>
+                        <li>Tiguan</li>
+                        <li>Teramont</li>
+                        <li>Cross Sport</li>
+                        <li>Saveiro</li>
+                    </ul>
+                </div>
+
+                <div class="category">
+                    <h3>🚚 Vehículos comerciales</h3>
+                    <ul>
+                        <li>Amarok</li>
+                        <li>Caddy Pasajeros</li>
+                        <li>Transporter</li>
+                        <li>Crafter</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="promotion">
+
+                <h2>🎁 Promociones destacadas</h2>
+
+                <p>
+                    Conoce las promociones disponibles y permíteme ayudarte
+                    a encontrar la opción que mejor se adapte a tu perfil.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact">
+
+        <div class="container">
+
+            <h2>¿Hablamos?</h2>
+
+            <p>
+                Estoy para ayudarte a encontrar tu próximo Volkswagen.
+            </p>
+
+            <a href="tel:+529611834007">
+                📞 961 183 4007
+            </a>
+
+            <br><br>
+
+            <a href="mailto:Braulio.zapata@uw-datsa.com.mx">
+                ✉️ Braulio.zapata@uw-datsa.com.mx
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Volkswagen Datsa · Tuxtla Gutiérrez, Chiapas
+    <br>
+    VW SmartCard
+</footer>
+
+</body>
+</html>
