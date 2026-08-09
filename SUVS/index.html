@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coches Volkswagen | Volkswagen Datsa</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+.vehicle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #001e50;
+        }
+
+        .header {
+            background: white;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .back {
+            color: #001e50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 24px 50px;
+        }
+
+        .hero span {
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #0068d9;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 12px 0;
+        }
+
+        .hero p {
+            color: #5b6573;
+            font-size: 18px;
+        }
+
+        .models {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,.07);
+            transition: transform .25s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vehicle-image {
+            height: 270px;
+            background: #e9edf2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a94a3;
+            font-size: 15px;
+        }
+
+        .model-content {
+            padding: 28px;
+        }
+
+        .model-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .model-content p {
+            color: #5b6573;
+            line-height: 1.6;
+            margin-bottom: 22px;
+        }
+
+        .model-link {
+            display: inline-block;
+            color: #0068d9;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 700px) {
+            .models {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="header-container">
+        <div class="brand">Volkswagen Datsa</div>
+
+        <a class="back" href="../">
+            ← Volver
+        </a>
+    </div>
+</header>
+
+<section class="hero">
+    <span>VOLKSWAGEN DATSA</span>
+    <h1>SUVs</h1>
+    <p>Espacio, tecnología y versatilidad para cada camino.</p>
+</section>
+
+<main class="models">
+
+    <div class="model-card">
+        <div class="vehicle-image">
+            <img src="../assets/images/suvs/TERA-TRENDLINE-ROJO.JPG" alt="Volkswagen Tera">
+        </div>
+
+        <div class="model-content">
+            <h2>Tera</h2>
+            <p>Diseño moderno, tecnología y practicidad para todos los días.</p>
+            <a class="model-link" href="tera/">
+                Conocer Tera →
+            </a>
+        </div>
+    </div>
+
+    <div class="model-card">
+        <div class="vehicle-image">
+            <img src="../assets/images/suvs/NIUS-HIGHLINE-GRISMOONSTONE.JPG" alt="Volkswagen Nivus">
+        </div>
+
+        <div class="model-content">
+            <h2>Nivus</h2>
+            <p>Estilo, conectividad y versatilidad con carácter urbano.</p>
+            <a class="model-link" href="nivus/">
+                Conocer Nivus →
+            </a>
+        </div>
+    </div>
+
+    <div class="model-card">
+        <div class="vehicle-image">
+            <img src="../assets/images/suvs/TAOS-HIGHLINE-GRISFRANELA.JPG" alt="Volkswagen Taos">
+        </div>
+
+        <div class="model-content">
+            <h2>Taos</h2>
+            <p>Espacio, confort y tecnología para disfrutar cada trayecto.</p>
+            <a class="model-link" href="taos/">
+                Conocer Taos →
+            </a>
+        </div>
+    </div>
+
+    <div class="model-card">
+        <div class="vehicle-image">
+            <img src="../assets/images/suvs/TIGUAN-COMFORTLINE-VERDEAVOCADO.JPG" alt="Volkswagen Tiguan">
+        </div>
+
+        <div class="model-content">
+            <h2>Tiguan</h2>
+            <p>Versatilidad, confort y tecnología para acompañar cada aventura.</p>
+            <a class="model-link" href="tiguan/">
+                Conocer Tiguan →
+            </a>
+        </div>
+    </div>
+
+    <div class="model-card">
+        <div class="vehicle-image">
+            <img src="../assets/images/suvs/TERAMONT-HIGHLINE-PLATA.JPG" alt="Volkswagen Teramont">
+        </div>
+
+        <div class="model-content">
+            <h2>Teramont</h2>
+            <p>Gran espacio, presencia y confort para viajar en grande.</p>
+            <a class="model-link" href="teramont/">
+                Conocer Teramont →
+            </a>
+        </div>
+    </div>
+
+    <div class="model-card">
+        <div class="vehicle-image">
+            <img src="../assets/images/suvs/SAVEIRO-ROBUST-BLANCO.JPG" alt="Volkswagen Saveiro">
+        </div>
+
+        <div class="model-content">
+            <h2>Saveiro</h2>
+            <p>Versatilidad y capacidad para acompañarte en trabajo y aventura.</p>
+            <a class="model-link" href="saveiro/">
+                Conocer Saveiro →
+            </a>
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>
