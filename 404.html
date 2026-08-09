@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vehículos Comerciales | Volkswagen Datsa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #001e50;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 24px;
+    }
+
+    .header-container {
+      width: min(100% - 32px, 920px);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .back {
+      color: #001e50;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .page {
+      width: min(100% - 32px, 920px);
+      margin: auto;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 0;
+    }
+
+    .content {
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .error-number {
+      font-size: clamp(90px, 18vw, 170px);
+      line-height: .85;
+      font-weight: 800;
+      color: #001e50;
+      letter-spacing: -8px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #0066cc;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      color: #5b6573;
+      font-size: 19px;
+      line-height: 1.6;
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
+
+    .vehicles {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 22px;
+      margin: 30px auto;
+      box-shadow: 0 8px 30px rgba(0, 30, 80, .08);
+    }
+
+    .vehicles strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .vehicles p {
+      color: #5b6573;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .whatsapp {
+      background: #159455;
+      color: white;
+    }
+
+    .home {
+      background: #001e50;
+      color: white;
+    }
+
+    .road {
+      width: 100%;
+      height: 5px;
+      background: #001e50;
+      margin-top: 45px;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .road::after {
+      content: "";
+      position: absolute;
+      width: 35%;
+      height: 100%;
+      left: 10%;
+      background: #00b0f0;
+    }
+
+    @media (max-width: 600px) {
+      .buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .error-number {
+        letter-spacing: -4px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="brand">Volkswagen Datsa</div>
+      <a class="back" href="/">← Volver</a>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <div class="content">
+
+      <div class="error-number">404</div>
+
+      <span class="eyebrow">VOLKSWAGEN DATSA</span>
+
+      <h1>Esta ruta aún está en construcción.</h1>
+
+      <p class="intro">
+        Nuestros vehículos comerciales están listos para trabajar.
+        Esta sección, casi.
+      </p>
+
+      <div class="vehicles">
+        <strong>¿Buscas un Volkswagen comercial?</strong>
+        <p>
+          Amarok · Caddy · Transporter · Crafter
+        </p>
+        <p>
+          Contáctame y con gusto te comparto información,
+          disponibilidad y opciones para ti.
+        </p>
+      </div>
+
+     <div class="buttons">
+
+    <a
+        class="button whatsapp"
+        href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20recibir%20informaci%C3%B3n%20sobre%20los%20veh%C3%ADculos%20comerciales%20Volkswagen."
+    >
+        💬 Preguntar por WhatsApp
+    </a>
+
+    <a class="button home" href="/">
+        ← Volver al inicio
+    </a>
+
+</div>
+
+      <div class="road"></div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
