@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Promociones | Volkswagen Datsa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #001e50;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(100% - 32px, 1100px);
+      margin: auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-container {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    .back {
+      color: #001e50;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 60px 0 32px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: #0066cc;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #667085;
+      font-size: 18px;
+    }
+
+    .carousel-section {
+      padding: 24px 0 60px;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 1100px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 10px 32px rgba(0, 30, 80, .08);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform .45s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    .slide a {
+      display: block;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0, 30, 80, .9);
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-button.prev {
+      left: 18px;
+    }
+
+    .carousel-button.next {
+      right: 18px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #001e50;
+    }
+
+    .cta {
+      padding: 0 0 70px;
+    }
+
+    .cta-box {
+      background: white;
+      border-radius: 22px;
+      padding: 34px;
+      text-align: center;
+      box-shadow: 0 8px 26px rgba(0, 30, 80, .06);
+    }
+
+    .cta-box h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: #667085;
+      margin-bottom: 22px;
+    }
+
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #159455;
+      color: white;
+      text-decoration: none;
+      font-weight: 750;
+      padding: 15px 24px;
+      border-radius: 10px;
+    }
+
+    footer {
+      padding: 30px 16px;
+      text-align: center;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .slide img {
+        height: 480px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding-top: 42px;
+      }
+
+      .slide img {
+        height: 330px;
+      }
+
+      .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+      }
+
+      .cta-box {
+        padding: 28px 20px;
+      }
+
+      .whatsapp {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-container">
+    <div class="brand">Volkswagen Datsa</div>
+
+    <a class="back" href="../">
+      ← Volver al inicio
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+
+      <span class="eyebrow">VOLKSWAGEN DATSA</span>
+
+      <h1>Promociones especiales</h1>
+
+      <p>
+        Conoce nuestras promociones y eventos destacados.
+      </p>
+
+    </div>
+  </section>
+
+
+  <section class="carousel-section">
+    <div class="container">
+
+      <div class="carousel">
+
+        <div class="slides" id="slides">
+
+          <div class="slide">
+            <a
+              href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20la%20promoci%C3%B3n%20de%20Croquetat%C3%B3n%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+            >
+              <img
+                src="../assets/images/promociones/croquetaton.png"
+                alt="Croquetatón Volkswagen Datsa"
+              >
+            </a>
+          </div>
+
+        </div>
+
+        <button class="carousel-button prev" id="prev">
+          ‹
+        </button>
+
+        <button class="carousel-button next" id="next">
+          ›
+        </button>
+
+      </div>
+
+      <div class="dots" id="dots"></div>
+
+    </div>
+  </section>
+
+
+  <section class="cta">
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>¿Te interesa alguna promoción?</h2>
+
+        <p>
+          Escríbeme y con gusto te comparto información, vigencia y opciones disponibles.
+        </p>
+
+        <a
+          class="whatsapp"
+          href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20las%20promociones%20en%20tu%20tarjeta%20digital%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+        >
+          💬 Preguntar por WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Volkswagen Datsa · Tuxtla Gutiérrez, Chiapas
+</footer>
+
+
+<script>
+  const slides = document.getElementById("slides");
+  const prev = document.getElementById("prev");
+  const next = document.getElementById("next");
+  const dotsContainer = document.getElementById("dots");
+
+  const slideItems = document.querySelectorAll(".slide");
+
+  let currentSlide = 0;
+
+  function createDots() {
+    slideItems.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.classList.add("dot");
+
+      if (index === 0) {
+        dot.classList.add("active");
+      }
+
+      dot.addEventListener("click", () => {
+        currentSlide = index;
+        updateCarousel();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function updateCarousel() {
+    slides.style.transform =
+      "translateX(-" + currentSlide * 100 + "%)";
+
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentSlide);
+    });
+  }
+
+  next.addEventListener("click", () => {
+    currentSlide =
+      (currentSlide + 1) % slideItems.length;
+
+    updateCarousel();
+  });
+
+  prev.addEventListener("click", () => {
+    currentSlide =
+      (currentSlide - 1 + slideItems.length) % slideItems.length;
+
+    updateCarousel();
+  });
+
+  createDots();
+</script>
+
+</body>
+</html>
