@@ -317,7 +317,132 @@ padding: 0;
             padding: 28px 16px;
             font-size: 13px;
         }
+.promo-home {
+  padding: 70px 0;
+  background: #f5f7fa;
+}
 
+.promo-home-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.promo-home-header span {
+  display: block;
+  color: #0066cc;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.promo-home-header h2 {
+  color: #001e50;
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.promo-home-header p {
+  color: #667085;
+  font-size: 17px;
+}
+
+.promo-carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 30, 80, .08);
+}
+
+.promo-slides {
+  display: flex;
+  transition: transform .45s ease;
+}
+
+.promo-slide {
+  min-width: 100%;
+}
+
+.promo-slide a {
+  display: block;
+}
+
+.promo-slide img {
+  display: block;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.promo-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 30, 80, .9);
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.promo-prev {
+  left: 18px;
+}
+
+.promo-next {
+  right: 18px;
+}
+
+.promo-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.promo-dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.promo-dot.active {
+  background: #001e50;
+}
+
+.promo-home-action {
+  text-align: center;
+  margin-top: 22px;
+}
+
+.promo-more {
+  display: inline-block;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 750;
+}
+
+@media (max-width: 700px) {
+  .promo-slide img {
+    height: 320px;
+  }
+
+  .promo-home-header h2 {
+    font-size: 30px;
+  }
+
+  .promo-arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
         @media (max-width: 800px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -353,7 +478,51 @@ padding: 0;
         }
     </style>
 </head>
+<script>
+  const promoSlides = document.getElementById("promoSlides");
+  const promoItems = document.querySelectorAll(".promo-slide");
+  const promoPrev = document.getElementById("promoPrev");
+  const promoNext = document.getElementById("promoNext");
+  const promoDots = document.getElementById("promoDots");
 
+  let promoCurrent = 0;
+
+  promoItems.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.classList.add("promo-dot");
+
+    if (index === 0) {
+      dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+      promoCurrent = index;
+      updatePromoCarousel();
+    });
+
+    promoDots.appendChild(dot);
+  });
+
+  function updatePromoCarousel() {
+    promoSlides.style.transform =
+      "translateX(-" + promoCurrent * 100 + "%)";
+
+    document.querySelectorAll(".promo-dot").forEach((dot, index) => {
+      dot.classList.toggle("active", index === promoCurrent);
+    });
+  }
+
+  promoNext.addEventListener("click", () => {
+    promoCurrent = (promoCurrent + 1) % promoItems.length;
+    updatePromoCarousel();
+  });
+
+  promoPrev.addEventListener("click", () => {
+    promoCurrent =
+      (promoCurrent - 1 + promoItems.length) % promoItems.length;
+    updatePromoCarousel();
+  });
+</script>
 <body>
 
 <header>
@@ -505,22 +674,50 @@ padding: 0;
    
 
 
-    <section>
-        <div class="container">
+   <section class="promo-home">
+  <div class="container">
 
-            <div class="promotion">
+    <div class="promo-home-header">
+      <span>VOLKSWAGEN DATSA</span>
+      <h2>Promociones destacadas</h2>
+      <p>Conoce nuestras promociones y eventos especiales.</p>
+    </div>
 
-                <h2>🎁 Promociones destacadas</h2>
+    <div class="promo-carousel">
 
-                <p>
-                    Conoce las promociones disponibles y permíteme ayudarte
-                    a encontrar la opción que mejor se adapte a tu perfil.
-                </p>
+      <div class="promo-slides" id="promoSlides">
 
-            </div>
-
+        <div class="promo-slide">
+          <a
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20la%20promoci%C3%B3n%20del%20Croquetat%C3%B3n%20en%20tu%20tarjeta%20digital%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n."
+          >
+            <img
+              src="assets/images/promociones/croquetaton.png"
+              alt="Croquetatón Volkswagen Datsa"
+            >
+          </a>
         </div>
-    </section>
+
+      </div>
+
+      <button class="promo-arrow promo-prev" id="promoPrev">‹</button>
+      <button class="promo-arrow promo-next" id="promoNext">›</button>
+
+    </div>
+
+    <div class="promo-dots" id="promoDots"></div>
+
+    <div class="promo-home-action">
+      <a
+        href="promociones/"
+        class="promo-more"
+      >
+        Ver todas las promociones →
+      </a>
+    </div>
+
+  </div>
+</section>
 
     <section class="contact">
 
