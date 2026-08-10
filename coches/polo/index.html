@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Volkswagen Polo | Volkswagen Datsa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #001e50;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(100% - 32px, 1100px);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-container {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    .back {
+      color: #001e50;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: #001e50;
+      color: white;
+      padding: 72px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #6bbcff;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 78px);
+      line-height: .95;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #d9e5f5;
+      font-size: 19px;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #e9eef4;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .primary {
+      background: #ffffff;
+      color: #001e50;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,.45);
+      color: white;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 26px rgba(0, 30, 80, .06);
+    }
+
+    .benefit-icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .benefit p {
+      color: #667085;
+    }
+
+    .versions {
+      background: white;
+    }
+
+    .version-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .version {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .version span {
+      color: #0066cc;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .version h3 {
+      font-size: 25px;
+      margin: 8px 0;
+    }
+
+    .version p {
+      color: #667085;
+    }
+
+    .cta {
+      padding-top: 30px;
+    }
+
+    .cta-box {
+      background: #001e50;
+      color: white;
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: #d9e5f5;
+      font-size: 17px;
+      margin-bottom: 26px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .whatsapp {
+      background: #159455;
+      color: white;
+    }
+
+    .finance {
+      background: white;
+      color: #001e50;
+    }
+
+    footer {
+      padding: 30px 16px;
+      text-align: center;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 300px;
+      }
+
+      .benefits,
+      .version-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 48px 0;
+      }
+
+      .hero-buttons,
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 34px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-container">
+    <div class="brand">Volkswagen Datsa</div>
+    <a class="back" href="../">← Volver a Coches</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <span class="eyebrow">VOLKSWAGEN DATSA</span>
+
+        <h1>Polo</h1>
+
+        <p>
+          Diseño, tecnología y eficiencia para disfrutar cada camino.
+          Conoce el Volkswagen que combina practicidad con estilo.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            class="button primary"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20cotizar%20un%20Volkswagen%20Polo."
+          >
+            Cotizar mi Polo
+          </a>
+
+          <a class="button secondary" href="#versiones">
+            Ver versiones
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="../../assets/images/coches/POLO-TRACK-GRIS.JPG"
+          alt="Volkswagen Polo"
+        >
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>¿Por qué Polo?</h2>
+        <p>Un Volkswagen pensado para acompañarte todos los días.</p>
+      </div>
+
+      <div class="benefits">
+
+        <div class="benefit">
+          <div class="benefit-icon">✨</div>
+          <h3>Diseño Volkswagen</h3>
+          <p>
+            Una imagen moderna y funcional con el carácter que distingue a Volkswagen.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">📱</div>
+          <h3>Tecnología para tu día</h3>
+          <p>
+            Conectividad y equipamiento pensados para hacer cada trayecto más cómodo.
+          </p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">🛣️</div>
+          <h3>Práctico y eficiente</h3>
+          <p>
+            Ideal para ciudad, trabajo, viajes y todo lo que forma parte de tu camino.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="versions" id="versiones">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Conoce las versiones</h2>
+        <p>
+          Te ayudo a encontrar la versión que mejor se adapte a lo que necesitas.
+        </p>
+      </div>
+
+      <div class="version-grid">
+
+        <div class="version">
+          <span>POLO</span>
+          <h3>Track</h3>
+          <p>
+            Una opción práctica y funcional para disfrutar la experiencia Volkswagen.
+          </p>
+        </div>
+
+        <div class="version">
+          <span>POLO</span>
+          <h3>Comfortline</h3>
+          <p>
+            Mayor equipamiento y confort para acompañarte en cada trayecto.
+          </p>
+        </div>
+
+        <div class="version">
+          <span>POLO</span>
+          <h3>Highline</h3>
+          <p>
+            Diseño, tecnología y equipamiento para quienes buscan una experiencia más completa.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>¿Te imaginas estrenando tu Polo?</h2>
+
+        <p>
+          Cuéntame qué versión buscas y te ayudo a revisar disponibilidad,
+          financiamiento y opciones para ti.
+        </p>
+
+        <div class="cta-buttons">
+
+          <a
+            class="button whatsapp"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20el%20Volkswagen%20Polo%20en%20tu%20tarjeta%20digital%20y%20me%20gustaría%20recibir%20una%20cotización."
+          >
+            💬 Cotizar por WhatsApp
+          </a>
+
+          <a
+            class="button finance"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20conocer%20las%20opciones%20de%20financiamiento%20para%20Volkswagen%20Polo."
+          >
+            💳 Revisar financiamiento
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Volkswagen Datsa · Tuxtla Gutiérrez, Chiapas
+</footer>
+
+</body>
+</html>
