@@ -422,11 +422,28 @@ padding: 0;
   margin-top: 22px;
 }
 
-.promo-more {
-  display: inline-block;
-  color: #0066cc;
+.promo-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #159455;
+  color: white;
   text-decoration: none;
   font-weight: 750;
+  padding: 14px 24px;
+  border-radius: 10px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.promo-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .12);
+}
+
+@media (max-width: 520px) {
+  .promo-whatsapp {
+    width: 100%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -707,14 +724,14 @@ padding: 0;
 
     <div class="promo-dots" id="promoDots"></div>
 
-    <div class="promo-home-action">
-      <a
-        href="promociones/"
-        class="promo-more"
-      >
-        Ver todas las promociones →
-      </a>
-    </div>
+ <div class="promo-home-action">
+  <a
+    href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20una%20promoci%C3%B3n%20en%20tu%20tarjeta%20digital%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+    class="promo-whatsapp"
+  >
+    💬 Quiero información de esta promoción
+  </a>
+</div>
 
   </div>
 </section>
