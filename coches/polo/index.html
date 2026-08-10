@@ -25,6 +25,8 @@
       margin: auto;
     }
 
+    /* HEADER */
+
     header {
       background: white;
       border-bottom: 1px solid #e5e7eb;
@@ -47,6 +49,8 @@
       text-decoration: none;
       font-weight: 700;
     }
+
+    /* HERO */
 
     .hero {
       background: #001e50;
@@ -115,7 +119,7 @@
     }
 
     .primary {
-      background: #ffffff;
+      background: white;
       color: #001e50;
     }
 
@@ -123,6 +127,8 @@
       border: 1px solid rgba(255,255,255,.45);
       color: white;
     }
+
+    /* SECCIONES */
 
     section {
       padding: 68px 0;
@@ -142,6 +148,8 @@
       color: #667085;
       font-size: 17px;
     }
+
+    /* BENEFICIOS */
 
     .benefits {
       display: grid;
@@ -170,37 +178,52 @@
       color: #667085;
     }
 
+    /* POLO TRACK */
+
     .versions {
       background: white;
     }
 
-    .version-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .track-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
     }
 
     .version {
       border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 28px;
+      border-radius: 22px;
+      padding: 38px;
+      text-align: center;
+      box-shadow: 0 10px 32px rgba(0, 30, 80, .06);
     }
 
     .version span {
+      display: block;
       color: #0066cc;
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 1.5px;
+      margin-bottom: 8px;
     }
 
     .version h3 {
-      font-size: 25px;
-      margin: 8px 0;
+      font-size: 34px;
+      margin-bottom: 12px;
     }
 
     .version p {
       color: #667085;
+      font-size: 17px;
+      max-width: 500px;
+      margin: 0 auto 22px;
     }
+
+    .track-button {
+      background: #001e50;
+      color: white;
+    }
+
+    /* CTA */
 
     .cta {
       padding-top: 30px;
@@ -242,12 +265,16 @@
       color: #001e50;
     }
 
+    /* FOOTER */
+
     footer {
       padding: 30px 16px;
       text-align: center;
       color: #667085;
       font-size: 14px;
     }
+
+    /* CELULAR */
 
     @media (max-width: 800px) {
       .hero-grid {
@@ -258,8 +285,7 @@
         height: 300px;
       }
 
-      .benefits,
-      .version-grid {
+      .benefits {
         grid-template-columns: 1fr;
       }
     }
@@ -281,6 +307,10 @@
       .cta-box {
         padding: 34px 22px;
       }
+
+      .version {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
@@ -290,11 +320,16 @@
 <header>
   <div class="container header-container">
     <div class="brand">Volkswagen Datsa</div>
-    <a class="back" href="../">← Volver a Coches</a>
+
+    <a class="back" href="../">
+      ← Volver a Coches
+    </a>
   </div>
 </header>
 
 <main>
+
+  <!-- PORTADA -->
 
   <section class="hero">
     <div class="container hero-grid">
@@ -306,64 +341,80 @@
 
         <p>
           Diseño, tecnología y eficiencia para disfrutar cada camino.
-          Conoce el Volkswagen que combina practicidad con estilo.
+          Conoce un Volkswagen práctico, moderno y listo para acompañarte todos los días.
         </p>
 
         <div class="hero-buttons">
+
           <a
             class="button primary"
-            href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20cotizar%20un%20Volkswagen%20Polo."
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20cotizar%20un%20Volkswagen%20Polo%20Track."
           >
             Cotizar mi Polo
           </a>
 
-          <a class="button secondary" href="#versiones">
-            Ver versiones
+          <a class="button secondary" href="#track">
+            Conocer Polo Track
           </a>
+
         </div>
       </div>
 
       <div class="hero-image">
         <img
           src="../../assets/images/coches/POLO-TRACK-GRIS.JPG"
-          alt="Volkswagen Polo"
+          alt="Volkswagen Polo Track"
         >
       </div>
 
     </div>
   </section>
 
+
+  <!-- BENEFICIOS -->
+
   <section>
     <div class="container">
 
       <div class="section-title">
         <h2>¿Por qué Polo?</h2>
-        <p>Un Volkswagen pensado para acompañarte todos los días.</p>
+
+        <p>
+          Un Volkswagen pensado para acompañarte todos los días.
+        </p>
       </div>
 
       <div class="benefits">
 
         <div class="benefit">
           <div class="benefit-icon">✨</div>
+
           <h3>Diseño Volkswagen</h3>
+
           <p>
             Una imagen moderna y funcional con el carácter que distingue a Volkswagen.
           </p>
         </div>
 
+
         <div class="benefit">
           <div class="benefit-icon">📱</div>
+
           <h3>Tecnología para tu día</h3>
+
           <p>
             Conectividad y equipamiento pensados para hacer cada trayecto más cómodo.
           </p>
         </div>
 
+
         <div class="benefit">
           <div class="benefit-icon">🛣️</div>
+
           <h3>Práctico y eficiente</h3>
+
           <p>
-            Ideal para ciudad, trabajo, viajes y todo lo que forma parte de tu camino.
+            Ideal para ciudad, trabajo y todo lo que forma parte de tu camino.
           </p>
         </div>
 
@@ -371,45 +422,51 @@
     </div>
   </section>
 
-  <section class="versions" id="versiones">
+
+  <!-- POLO TRACK -->
+
+  <section class="versions" id="track">
     <div class="container">
 
       <div class="section-title">
-        <h2>Conoce las versiones</h2>
+
+        <h2>Conoce Polo Track</h2>
+
         <p>
-          Te ayudo a encontrar la versión que mejor se adapte a lo que necesitas.
+          Una opción práctica para comenzar tu camino con Volkswagen.
         </p>
+
       </div>
 
-      <div class="version-grid">
+
+      <div class="track-wrapper">
 
         <div class="version">
-          <span>POLO</span>
+
+          <span>VOLKSWAGEN POLO</span>
+
           <h3>Track</h3>
-          <p>
-            Una opción práctica y funcional para disfrutar la experiencia Volkswagen.
-          </p>
-        </div>
 
-        <div class="version">
-          <span>POLO</span>
-          <h3>Comfortline</h3>
           <p>
-            Mayor equipamiento y confort para acompañarte en cada trayecto.
+            Funcional, moderno y preparado para acompañarte en tus trayectos diarios.
+            Conoce disponibilidad y las opciones disponibles para estrenar el tuyo.
           </p>
-        </div>
 
-        <div class="version">
-          <span>POLO</span>
-          <h3>Highline</h3>
-          <p>
-            Diseño, tecnología y equipamiento para quienes buscan una experiencia más completa.
-          </p>
+          <a
+            class="button track-button"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20conocer%20disponibilidad%20del%20Volkswagen%20Polo%20Track."
+          >
+            Consultar disponibilidad →
+          </a>
+
         </div>
 
       </div>
     </div>
   </section>
+
+
+  <!-- CONTACTO -->
 
   <section class="cta">
     <div class="container">
@@ -419,8 +476,8 @@
         <h2>¿Te imaginas estrenando tu Polo?</h2>
 
         <p>
-          Cuéntame qué versión buscas y te ayudo a revisar disponibilidad,
-          financiamiento y opciones para ti.
+          Cuéntame qué estás buscando y te ayudo a revisar disponibilidad,
+          financiamiento y opciones para estrenar.
         </p>
 
         <div class="cta-buttons">
@@ -431,6 +488,7 @@
           >
             💬 Cotizar por WhatsApp
           </a>
+
 
           <a
             class="button finance"
@@ -446,6 +504,7 @@
   </section>
 
 </main>
+
 
 <footer>
   Volkswagen Datsa · Tuxtla Gutiérrez, Chiapas
