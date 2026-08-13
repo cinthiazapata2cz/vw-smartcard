@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Volkswagen Nivus | Volkswagen Datsa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #001e50;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(100% - 32px, 1100px);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-container {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    .back {
+      color: #001e50;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: #001e50;
+      color: white;
+      padding: 72px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #6bbcff;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(50px, 8vw, 80px);
+      line-height: .95;
+      margin-bottom: 16px;
+    }
+
+    .hero-spec {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #d9e5f5;
+      font-size: 19px;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      height: 390px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #e9eef4;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .primary {
+      background: white;
+      color: #001e50;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,.45);
+      color: white;
+    }
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .quick-data {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .data-card {
+      text-align: center;
+      background: #eef4fb;
+      padding: 28px 20px;
+      border-radius: 18px;
+    }
+
+    .data-card strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .data-card span {
+      color: #667085;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 26px rgba(0, 30, 80, .06);
+    }
+
+    .benefit-icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .benefit p {
+      color: #667085;
+    }
+
+    .equipment {
+      background: white;
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .equipment-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,30,80,.05);
+    }
+
+    .equipment-card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .equipment-card ul {
+      padding-left: 20px;
+      color: #667085;
+    }
+
+    .equipment-card li {
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      padding-top: 30px;
+    }
+
+    .cta-box {
+      background: #001e50;
+      color: white;
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: #d9e5f5;
+      font-size: 17px;
+      margin-bottom: 26px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .whatsapp {
+      background: #159455;
+      color: white;
+    }
+
+    .finance {
+      background: white;
+      color: #001e50;
+    }
+
+    footer {
+      padding: 30px 16px;
+      text-align: center;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 320px;
+      }
+
+      .quick-data {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits,
+      .equipment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 48px 0;
+      }
+
+      .hero-image {
+        height: 270px;
+      }
+
+      .quick-data {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-buttons,
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 34px 22px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .back {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-container">
+
+    <div class="brand">
+      Volkswagen Datsa
+    </div>
+
+    <a class="back" href="../">
+      ← Volver a SUVs
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="eyebrow">
+          VOLKSWAGEN DATSA
+        </span>
+
+        <h1>Nivus</h1>
+
+        <span class="hero-spec">
+          HIGHLINE · 1.0 TSI · 114 HP
+        </span>
+
+        <p>
+          Diseño urbano, tecnología y seguridad en una SUV
+          pensada para acompañarte todos los días.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            class="button primary"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20cotizar%20un%20Volkswagen%20Nivus%20Highline%202026."
+          >
+            Cotizar mi Nivus
+          </a>
+
+          <a
+            class="button secondary"
+            href="#equipamiento"
+          >
+            Ver equipamiento
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <img
+          src="../../assets/suvs/NIUS-HIGHLINE-GRISMOONSTONE.JPG"
+          alt="Volkswagen Nivus Highline Gris Moonstone"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DATOS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Nivus Highline</h2>
+
+        <p>
+          Una sola versión, con un nivel de equipamiento muy completo.
+        </p>
+
+      </div>
+
+
+      <div class="quick-data">
+
+        <div class="data-card">
+          <strong>114 hp</strong>
+          <span>Potencia</span>
+        </div>
+
+        <div class="data-card">
+          <strong>200 Nm</strong>
+          <span>Torque</span>
+        </div>
+
+        <div class="data-card">
+          <strong>415 L</strong>
+          <span>Cajuela</span>
+        </div>
+
+        <div class="data-card">
+          <strong>Tiptronic 6</strong>
+          <span>Transmisión</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFICIOS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="benefits">
+
+        <div class="benefit">
+
+          <div class="benefit-icon">⚡</div>
+
+          <h3>Motor TSI Turbo</h3>
+
+          <p>
+            Motor 1.0 TSI de 114 hp y 200 Nm de torque,
+            acompañado de transmisión Tiptronic de 6 velocidades.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">🛡️</div>
+
+          <h3>Asistencia avanzada</h3>
+
+          <p>
+            Travel Assist, ACC, mantenimiento de carril,
+            monitoreo de punto ciego y asistente de colisión frontal.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">📱</div>
+
+          <h3>Tecnología Highline</h3>
+
+          <p>
+            Digital Cockpit, pantalla touch de 10 pulgadas,
+            App-Connect inalámbrico y cargador inalámbrico.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EQUIPAMIENTO -->
+
+  <section class="equipment" id="equipamiento">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Equipamiento destacado</h2>
+
+        <p>
+          Tecnología, confort y seguridad en Nivus Highline.
+        </p>
+
+      </div>
+
+
+      <div class="equipment-grid">
+
+
+        <div class="equipment-card">
+
+          <h3>🛡️ Seguridad y asistencia</h3>
+
+          <ul>
+            <li>Control crucero adaptativo ACC</li>
+            <li>Travel Assist con Stop & Go</li>
+            <li>Asistente de mantenimiento de carril</li>
+            <li>Monitoreo de punto ciego</li>
+            <li>Alerta de tráfico trasero</li>
+            <li>Asistente de colisión frontal</li>
+            <li>Cámara de visión trasera</li>
+            <li>Sensores delanteros y traseros</li>
+            <li>Detector de cansancio</li>
+          </ul>
+
+        </div>
+
+
+        <div class="equipment-card">
+
+          <h3>📱 Conectividad</h3>
+
+          <ul>
+            <li>Volkswagen Digital Cockpit</li>
+            <li>Pantalla touch a color de 10"</li>
+            <li>Wireless App-Connect</li>
+            <li>Cargador inalámbrico para smartphone</li>
+            <li>Bluetooth</li>
+            <li>4 puertos USB Tipo C</li>
+            <li>6 bocinas</li>
+          </ul>
+
+        </div>
+
+
+        <div class="equipment-card">
+
+          <h3>✨ Confort</h3>
+
+          <ul>
+            <li>Climatronic Touch de 1 zona</li>
+            <li>Keyless Access</li>
+            <li>Push to Start</li>
+            <li>Sensor de lluvia</li>
+            <li>Espejo interior antideslumbrante automático</li>
+            <li>Espejos laterales abatibles electrónicamente</li>
+            <li>Asientos delanteros Comfort</li>
+            <li>Volante multifunciones forrado en piel</li>
+            <li>Paletas de cambios</li>
+          </ul>
+
+        </div>
+
+
+        <div class="equipment-card">
+
+          <h3>🚙 Diseño</h3>
+
+          <ul>
+            <li>Rines de aluminio de 17"</li>
+            <li>Faros principales LED</li>
+            <li>Luz de marcha diurna LED</li>
+            <li>Luces traseras LED con línea unificada</li>
+            <li>Parrilla con labio iluminado LED</li>
+            <li>Barras porta-equipaje en aluminio anodizado</li>
+            <li>Spoiler trasero en negro</li>
+            <li>Vestiduras bitono con emblema NIVUS</li>
+          </ul>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ESPACIO -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Espacio que se adapta a ti</h2>
+
+        <p>
+          415 litros de cajuela que pueden crecer hasta 826 litros
+          al abatir la segunda fila.
+        </p>
+
+      </div>
+
+      <div class="quick-data">
+
+        <div class="data-card">
+          <strong>5</strong>
+          <span>Pasajeros</span>
+        </div>
+
+        <div class="data-card">
+          <strong>415 L</strong>
+          <span>Cajuela normal</span>
+        </div>
+
+        <div class="data-card">
+          <strong>826 L</strong>
+          <span>Con asientos abatidos</span>
+        </div>
+
+        <div class="data-card">
+          <strong>52 L</strong>
+          <span>Tanque de combustible</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>¿Quieres conocer Nivus?</h2>
+
+        <p>
+          Consulta disponibilidad, colores, opciones de financiamiento
+          y agenda una visita para conocerla.
+        </p>
+
+
+        <div class="cta-buttons">
+
+          <a
+            class="button whatsapp"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20el%20Volkswagen%20Nivus%20Highline%20en%20tu%20tarjeta%20digital%20y%20quiero%20recibir%20una%20cotizaci%C3%B3n."
+          >
+            💬 Cotizar Nivus
+          </a>
+
+
+          <a
+            class="button finance"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20conocer%20las%20opciones%20de%20financiamiento%20para%20Volkswagen%20Nivus."
+          >
+            💳 Revisar financiamiento
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  Volkswagen Datsa · Tuxtla Gutiérrez, Chiapas
+</footer>
+
+</body>
+</html>
