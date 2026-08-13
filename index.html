@@ -347,47 +347,94 @@ padding: 0;
   font-size: 17px;
 }
 
+/* CARRUSEL DE PROMOCIONES */
+
 .promo-carousel {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
   background: white;
   box-shadow: 0 10px 30px rgba(0, 30, 80, .08);
+  touch-action: pan-y;
 }
 
 .promo-slides {
   display: flex;
-  transition: transform .45s ease;
+  transition: transform .5s ease;
 }
 
 .promo-slide {
   min-width: 100%;
+  flex-shrink: 0;
 }
 
 .promo-slide a {
   display: block;
 }
 
-.promo-slide img {
-  display: block;
-  width: 100%;
-  height: 560px;
-  object-fit: cover;
-  object-position: center;
+
+
+/* PUNTITOS DEL CARRUSEL */
+
+.promo-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+
+  z-index: 10;
 }
 
-.promo-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+.promo-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+
   border: none;
   border-radius: 50%;
-  background: rgba(0, 30, 80, .9);
-  color: white;
-  font-size: 28px;
+
+  background: rgba(255,255,255,.55);
+
+  box-shadow: 0 1px 5px rgba(0,0,0,.3);
+
   cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.promo-dot.active {
+  background: #ffffff;
+  transform: scale(1.4);
+}
+
+@media (max-width: 700px) {
+
+  .promo-carousel {
+    border-radius: 18px;
+  }
+
+  .promo-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .promo-dots {
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .promo-dot {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 .promo-prev {
@@ -726,6 +773,8 @@ padding: 0;
             <img
               src="assets/images/promociones/croquetaton.png"
               alt="Croquetatón Volkswagen Datsa"
+              loading="lazy"
+            decoding="async"
             >
           </a>
         </div>
