@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Volkswagen Jetta | Volkswagen Datsa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fa;
+      color: #001e50;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(100% - 32px, 1100px);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-container {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 750;
+    }
+
+    .back {
+      color: #001e50;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: #001e50;
+      color: white;
+      padding: 72px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #6bbcff;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 78px);
+      line-height: .95;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #d9e5f5;
+      font-size: 19px;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .hero-image {
+      height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #e9eef4;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .primary {
+      background: white;
+      color: #001e50;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255,255,255,.45);
+      color: white;
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 68px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #667085;
+      font-size: 17px;
+    }
+
+    /* BENEFICIOS */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 26px rgba(0, 30, 80, .06);
+    }
+
+    .benefit-icon {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .benefit h3 {
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .benefit p {
+      color: #667085;
+    }
+
+    /* DATOS RÁPIDOS */
+
+    .quick-data {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .data-card {
+      text-align: center;
+      background: #eef4fb;
+      padding: 28px 20px;
+      border-radius: 18px;
+    }
+
+    .data-card strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .data-card span {
+      color: #667085;
+    }
+
+    /* VERSIONES */
+
+    .versions {
+      background: white;
+    }
+
+    .version-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .version {
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 30, 80, .05);
+    }
+
+    .version span {
+      color: #0066cc;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+
+    .version h3 {
+      font-size: 28px;
+      margin: 8px 0 4px;
+    }
+
+    .version .engine {
+      color: #001e50;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .version ul {
+      padding-left: 20px;
+      color: #667085;
+      margin-bottom: 22px;
+    }
+
+    .version li {
+      margin-bottom: 7px;
+    }
+
+    .version-button {
+      background: #001e50;
+      color: white;
+    }
+
+    /* GLI */
+
+    .gli-card {
+      border: 2px solid #001e50;
+      background: #f7f9fc;
+    }
+
+    .gli-card .badge {
+      display: inline-block;
+      background: #001e50;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-top: 30px;
+    }
+
+    .cta-box {
+      background: #001e50;
+      color: white;
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(30px, 5vw, 44px);
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: #d9e5f5;
+      font-size: 17px;
+      margin-bottom: 26px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .whatsapp {
+      background: #159455;
+      color: white;
+    }
+
+    .finance {
+      background: white;
+      color: #001e50;
+    }
+
+    footer {
+      padding: 30px 16px;
+      text-align: center;
+      color: #667085;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 300px;
+      }
+
+      .benefits,
+      .version-grid,
+      .quick-data {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero {
+        padding: 48px 0;
+      }
+
+      .hero-buttons,
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 34px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-container">
+
+    <div class="brand">
+      Volkswagen Datsa
+    </div>
+
+    <a class="back" href="../">
+      ← Volver a Coches
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- PORTADA -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="eyebrow">
+          VOLKSWAGEN DATSA
+        </span>
+
+        <h1>Jetta</h1>
+
+        <p>
+          Tecnología, confort y carácter Volkswagen.
+          Descubre una gama que va desde la practicidad de Jetta Trendline
+          hasta el alto desempeño de Jetta GLI.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            class="button primary"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20me%20interesa%20cotizar%20un%20Volkswagen%20Jetta."
+          >
+            Cotizar mi Jetta
+          </a>
+
+          <a
+            class="button secondary"
+            href="#versiones"
+          >
+            Ver versiones
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <img
+          src="../../assets/images/coches/JETTA-SPORTLINE-GRISFRANELA.JPG"
+          alt="Volkswagen Jetta"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFICIOS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>¿Por qué Jetta?</h2>
+
+        <p>
+          Un sedán pensado para combinar tecnología, espacio y desempeño.
+        </p>
+
+      </div>
+
+
+      <div class="benefits">
+
+        <div class="benefit">
+
+          <div class="benefit-icon">⚡</div>
+
+          <h3>Motor TSI</h3>
+
+          <p>
+            La gama Jetta combina desempeño y eficiencia con tecnología turbo.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">📱</div>
+
+          <h3>Tecnología a bordo</h3>
+
+          <p>
+            Digital Cockpit, conectividad y pantallas touch disponibles
+            dependiendo de la versión.
+          </p>
+
+        </div>
+
+
+        <div class="benefit">
+
+          <div class="benefit-icon">🛡️</div>
+
+          <h3>Asistentes de manejo</h3>
+
+          <p>
+            Las versiones superiores integran sistemas como ACC,
+            Lane Assist y monitoreo de punto ciego.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DATOS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="quick-data">
+
+        <div class="data-card">
+          <strong>5</strong>
+          <span>Pasajeros</span>
+        </div>
+
+        <div class="data-card">
+          <strong>510 L</strong>
+          <span>Capacidad de cajuela</span>
+        </div>
+
+        <div class="data-card">
+          <strong>4</strong>
+          <span>Opciones para elegir</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VERSIONES -->
+
+  <section class="versions" id="versiones">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Conoce las versiones</h2>
+
+        <p>
+          Desde Jetta Trendline hasta la experiencia deportiva de GLI.
+        </p>
+
+      </div>
+
+
+      <div class="version-grid">
+
+
+        <!-- TRENDLINE -->
+
+        <div class="version">
+
+          <span>JETTA 2026</span>
+
+          <h3>Trendline</h3>
+
+          <p class="engine">
+            Motor 1.4 TSI · 150 hp · Tiptronic 8 velocidades
+          </p>
+
+          <ul>
+            <li>Volkswagen Digital Cockpit</li>
+            <li>Pantalla touch de 8.25"</li>
+            <li>Volkswagen App-Connect</li>
+            <li>Control de velocidad crucero</li>
+            <li>Faros principales LED</li>
+            <li>Rines de acero de 16"</li>
+          </ul>
+
+          <a
+            class="button version-button"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20informaci%C3%B3n%20del%20Volkswagen%20Jetta%20Trendline."
+          >
+            Consultar esta versión →
+          </a>
+
+        </div>
+
+
+        <!-- COMFORTLINE -->
+
+        <div class="version">
+
+          <span>JETTA 2026</span>
+
+          <h3>Comfortline</h3>
+
+          <p class="engine">
+            Motor 1.4 TSI · 150 hp · Tiptronic 8 velocidades
+          </p>
+
+          <ul>
+            <li>Pantalla touch de 10"</li>
+            <li>Wireless App-Connect</li>
+            <li>Cargador inalámbrico</li>
+            <li>Cámara de visión trasera</li>
+            <li>Control crucero adaptativo ACC</li>
+            <li>Lane Assist</li>
+            <li>Sensores delanteros y traseros</li>
+            <li>Rines de aluminio de 16"</li>
+          </ul>
+
+          <a
+            class="button version-button"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20informaci%C3%B3n%20del%20Volkswagen%20Jetta%20Comfortline."
+          >
+            Consultar esta versión →
+          </a>
+
+        </div>
+
+
+        <!-- SPORTLINE -->
+
+        <div class="version">
+
+          <span>JETTA 2026</span>
+
+          <h3>Sportline</h3>
+
+          <p class="engine">
+            Motor 1.4 TSI · 150 hp · Tiptronic 8 velocidades
+          </p>
+
+          <ul>
+            <li>Pantalla touch de 10"</li>
+            <li>VW Premium Sound con Subwoofer</li>
+            <li>Light Assist</li>
+            <li>Monitoreo de punto ciego</li>
+            <li>Iluminación ambiental de 10 colores</li>
+            <li>Interior Total Black</li>
+            <li>Rines de aluminio de 17"</li>
+            <li>Techo corredizo panorámico</li>
+          </ul>
+
+          <a
+            class="button version-button"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20informaci%C3%B3n%20del%20Volkswagen%20Jetta%20Sportline."
+          >
+            Consultar esta versión →
+          </a>
+
+        </div>
+
+
+        <!-- GLI -->
+
+        <div class="version gli-card">
+
+          <div class="badge">
+            ALTO DESEMPEÑO
+          </div>
+
+          <span>JETTA GLI 2026</span>
+
+          <h3>GLI</h3>
+
+          <p class="engine">
+            Motor 2.0 TSI · 230 hp · DSG 7 velocidades
+          </p>
+
+          <ul>
+            <li>350 Nm de torque</li>
+            <li>Launch Control</li>
+            <li>Diferencial deportivo VAQ</li>
+            <li>Dirección progresiva</li>
+            <li>Selector de modos de manejo</li>
+            <li>ACC y Lane Assist</li>
+            <li>Asientos deportivos calefactables y ventilados</li>
+            <li>VW Premium Sound con Subwoofer</li>
+            <li>Rines de aluminio de 18"</li>
+            <li>Techo corredizo panorámico</li>
+          </ul>
+
+          <a
+            class="button version-button"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20informaci%C3%B3n%20del%20Volkswagen%20Jetta%20GLI%202026."
+          >
+            Quiero conocer GLI →
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTO -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>¿Cuál Jetta va contigo?</h2>
+
+        <p>
+          Cuéntame qué estás buscando y te ayudo a comparar versiones,
+          disponibilidad y opciones de financiamiento.
+        </p>
+
+        <div class="cta-buttons">
+
+          <a
+            class="button whatsapp"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20vi%20el%20Volkswagen%20Jetta%20en%20tu%20tarjeta%20digital%20y%20quiero%20recibir%20una%20cotizaci%C3%B3n."
+          >
+            💬 Cotizar Jetta
+          </a>
+
+
+          <a
+            class="button finance"
+            href="https://wa.me/529611834007?text=Hola%20Braulio,%20quiero%20conocer%20las%20opciones%20de%20financiamiento%20para%20Volkswagen%20Jetta."
+          >
+            💳 Revisar financiamiento
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  Volkswagen Datsa · Tuxtla Gutiérrez, Chiapas
+</footer>
+
+</body>
+</html>
